@@ -25,3 +25,8 @@ npm install
 - `npm run lint` – Lint the code.
 - `npm run test:e2e` – Open Cypress.
 - `npm run test:unit` – Run vitest unit tests.
+
+### 🔥 Troubleshooting
+
+`npm run backend` may error on macOS with port 5000 already in use.  
+Fix: System Preferences › Sharing and uncheck AirPlay Receiver to release port 5000.

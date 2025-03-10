@@ -5,6 +5,11 @@ export default {
     './src/**/*.{vue,js}',
   ],
   theme: {
+    fontFamily: {
+      sans: [
+        'Open Sans, sans-serif',
+      ],
+    },
     extend: {},
   },
   plugins: [],

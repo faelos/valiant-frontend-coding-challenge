@@ -241,6 +241,7 @@ async function fetchAllData () {
       API.getRequestedRepaymentPeriods(),
       API.getRequestedTermMonths(),
     ])
+    loadingState.value = LoadingStates.SUCCESS
   } catch (error) {
     loadingState.value = LoadingStates.ERROR
   }
@@ -252,7 +253,6 @@ function onLoanAmountChange (newLoanAmountStr) {
 
 onMounted(async () => {
   await fetchAllData()
-  loadingState.value = LoadingStates.SUCCESS
 
   // set selection defaults
   // we could update the BE response with new option props isDefault: bool or; placeholder: string

@@ -149,7 +149,7 @@
 
       <div class="rounded-lg bg-white p-4 shadow md:p-6">
         <p class="text-gray-600">
-          Monthly Repayments:
+          {{ repaymentPeriodStr }} Repayments:
         </p>
         <p class="text-xl font-semibold text-indigo-600 md:text-2xl">
           {{ monthlyRepaymentStr }}
@@ -203,6 +203,12 @@ const monthlyRepaymentStr = computed(() => {
 const totalRepaymentStr = computed(() => {
   if (!totalRepayment.value) return '-'
   return formatAUD(totalRepayment.value, true)
+})
+
+const repaymentPeriodStr = computed(() => {
+  return requestedRepaymentPeriods.value
+    .find(x => x.value === selectedRepaymentPeriod.value)
+    .label
 })
 
 watch(
